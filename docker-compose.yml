@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    container_name: node_express_app
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    volumes:
+      #- .:/usr/src/app
+      #- ./server.js:/usr/src/app/server.js
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+    # command: [ "node", "server.js" ]
+    # modo desarrollo
+    command: ["npm", "run", "dev"]
+    # Modo produccion
+    #command: ["npm", "start"]
+
