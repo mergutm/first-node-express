@@ -17,4 +17,6 @@ COPY . .
 EXPOSE ${PORT}
 
 # Comando por defecto
-CMD ["node", "server.js"]
+# CMD ["node", "server.js"]
+CMD ["npm", "start"]
+
